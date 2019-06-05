@@ -1,0 +1,1056 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Thu Apr 18 16:21:52 2019
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	18F2550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	idataCOMRAM,global,class=CODE,delta=1,noexec
+     6                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	dataCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    10                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text1,global,reloc=2,class=CODE,delta=1,group=2
+    12                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    16                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    17                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    18  0000                     
+    19                           ; Version 2.05
+    20                           ; Generated 20/12/2018 GMT
+    21                           ; 
+    22                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    23                           ; All rights reserved.
+    24                           ; 
+    25                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    26                           ; 
+    27                           ; Redistribution and use in source and binary forms, with or without modification, are
+    28                           ; permitted provided that the following conditions are met:
+    29                           ; 
+    30                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    31                           ;        conditions and the following disclaimer.
+    32                           ; 
+    33                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    34                           ;        of conditions and the following disclaimer in the documentation and/or other
+    35                           ;        materials provided with the distribution.
+    36                           ; 
+    37                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    38                           ;        software without specific prior written permission.
+    39                           ; 
+    40                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    41                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    42                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    43                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    44                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    45                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    46                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    47                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    48                           ; 
+    49                           ; 
+    50                           ; Code-generator required, PIC18F2550 Definitions
+    51                           ; 
+    52                           ; SFR Addresses
+    53  0000                     
+    54                           	psect	idataCOMRAM
+    55  0009F0                     __pidataCOMRAM:
+    56                           	opt callstack 0
+    57                           
+    58                           ;initializer for main@F3321
+    59  0009F0  61                 	db	97
+    60  0009F1  62                 	db	98
+    61  0009F2  00                 	db	0
+    62  0009F3  00                 	db	0
+    63  0009F4  00                 	db	0
+    64                           
+    65                           ;initializer for main@F3319
+    66  0009F5  31                 	db	49
+    67  0009F6  32                 	db	50
+    68  0009F7  37                 	db	55
+    69  0009F8  00                 	db	0
+    70                           
+    71                           	psect	smallconst
+    72  000800                     __psmallconst:
+    73                           	opt callstack 0
+    74  000800  00                 	db	0
+    75  000801                     character_table@h:
+    76                           	opt callstack 0
+    77  000801  80                 	db	128
+    78  000802                     __end_ofcharacter_table@h:
+    79                           	opt callstack 0
+    80  000802  40                 	db	64
+    81  000803                     __end_ofcharacter_table@g:
+    82                           	opt callstack 0
+    83  000803  20                 	db	32
+    84  000804                     __end_ofcharacter_table@f:
+    85                           	opt callstack 0
+    86  000804  10                 	db	16
+    87  000805                     __end_ofcharacter_table@e:
+    88                           	opt callstack 0
+    89  000805  08                 	db	8
+    90  000806                     __end_ofcharacter_table@d:
+    91                           	opt callstack 0
+    92  000806  04                 	db	4
+    93  000807                     __end_ofcharacter_table@c:
+    94                           	opt callstack 0
+    95  000807  02                 	db	2
+    96  000808                     __end_ofcharacter_table@b:
+    97                           	opt callstack 0
+    98  000808  01                 	db	1
+    99  000809                     __end_ofcharacter_table@a:
+   100                           	opt callstack 0
+   101  000809  00                 	db	0
+   102  00080A                     __end_ofcharacter_table@o:
+   103                           	opt callstack 0
+   104  0000                     _LATBbits	set	3978
+   105  0000                     _LATB	set	3978
+   106  0000                     _PORTBbits	set	3969
+   107  0000                     _OSCCON	set	4051
+   108  0000                     _TRISB	set	3987
+   109  0000                     _PORTB	set	3969
+   110  0000                     _TRISA	set	3986
+   111  0000                     _CMCON	set	4020
+   112  0000                     _ADCON1	set	4033
+   113  0000                     _PORTA	set	3968
+   114                           
+   115                           ; #config settings
+   116  00080A  00                 	db	0	; dummy byte at the end
+   117  0000                     
+   118                           	psect	cinit
+   119  000966                     __pcinit:
+   120                           	opt callstack 0
+   121  000966                     start_initialization:
+   122                           	opt callstack 0
+   123  000966                     __initialization:
+   124                           	opt callstack 0
+   125                           
+   126                           ; Initialize objects allocated to COMRAM (9 bytes)
+   127                           ; load TBLPTR registers with __pidataCOMRAM
+   128  000966  0EF0               	movlw	low __pidataCOMRAM
+   129  000968  6EF6               	movwf	tblptrl,c
+   130  00096A  0E09               	movlw	high __pidataCOMRAM
+   131  00096C  6EF7               	movwf	tblptrh,c
+   132  00096E  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   133  000970  6EF8               	movwf	tblptru,c
+   134  000972  EE00  F017         	lfsr	0,__pdataCOMRAM
+   135  000976  EE10 F009          	lfsr	1,9
+   136  00097A                     copy_data0:
+   137  00097A  0009               	tblrd		*+
+   138  00097C  CFF5 FFEE          	movff	tablat,postinc0
+   139  000980  50E5               	movf	postdec1,w,c
+   140  000982  50E1               	movf	fsr1l,w,c
+   141  000984  E1FA               	bnz	copy_data0
+   142  000986                     end_of_initialization:
+   143                           	opt callstack 0
+   144  000986                     __end_of__initialization:
+   145                           	opt callstack 0
+   146  000986  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   147  000988  6EF8               	movwf	tblptru,c
+   148  00098A  0100               	movlb	0
+   149  00098C  EFDD  F004         	goto	_main	;jump to C main() function
+   150                           
+   151                           	psect	dataCOMRAM
+   152  000017                     __pdataCOMRAM:
+   153                           	opt callstack 0
+   154  000017                     main@F3321:
+   155                           	opt callstack 0
+   156  000017                     	ds	5
+   157  00001C                     main@F3319:
+   158                           	opt callstack 0
+   159  00001C                     	ds	4
+   160                           
+   161                           	psect	cstackCOMRAM
+   162  000001                     __pcstackCOMRAM:
+   163                           	opt callstack 0
+   164  000001                     ??_character_table:
+   165  000001                     ?_strlen:
+   166                           	opt callstack 0
+   167  000001                     send_digit@i:
+   168                           	opt callstack 0
+   169  000001                     strlen@s:
+   170                           	opt callstack 0
+   171                           
+   172                           ; 2 bytes @ 0x0
+   173  000001                     	ds	2
+   174  000003                     character_table@symbol:
+   175                           	opt callstack 0
+   176  000003                     send_digit@a:
+   177                           	opt callstack 0
+   178  000003                     strlen@a:
+   179                           	opt callstack 0
+   180                           
+   181                           ; 2 bytes @ 0x2
+   182  000003                     	ds	1
+   183  000004                     send_digit@data:
+   184                           	opt callstack 0
+   185                           
+   186                           ; 1 bytes @ 0x3
+   187  000004                     	ds	1
+   188  000005                     display3@data3:
+   189                           	opt callstack 0
+   190                           
+   191                           ; 2 bytes @ 0x4
+   192  000005                     	ds	2
+   193  000007                     ??_display3:
+   194                           
+   195                           ; 1 bytes @ 0x6
+   196  000007                     	ds	1
+   197  000008                     display3@bit:
+   198                           	opt callstack 0
+   199                           
+   200                           ; 1 bytes @ 0x7
+   201  000008                     	ds	1
+   202  000009                     
+   203                           ; 2 bytes @ 0x8
+   204  000009                     	ds	2
+   205  00000B                     
+   206                           ; 3 bytes @ 0xA
+   207  00000B                     	ds	3
+   208  00000E                     main@buffer:
+   209                           	opt callstack 0
+   210                           
+   211                           ; 4 bytes @ 0xD
+   212  00000E                     	ds	4
+   213  000012                     main@my_string:
+   214                           	opt callstack 0
+   215                           
+   216                           ; 5 bytes @ 0x11
+   217  000012                     	ds	5
+   218                           
+   219 ;;
+   220 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   221 ;;
+   222 ;; *************** function _main *****************
+   223 ;; Defined at:
+   224 ;;		line 281 in file "main.c"
+   225 ;; Parameters:    Size  Location     Type
+   226 ;;  argc            2    8[COMRAM] int 
+   227 ;;  argv            3   10[COMRAM] PTR PTR unsigned char 
+   228 ;; Auto vars:     Size  Location     Type
+   229 ;;  my_string       5   17[COMRAM] unsigned char [5]
+   230 ;;  buffer          4   13[COMRAM] unsigned char [4]
+   231 ;;  my_pointer      2    0        PTR unsigned char 
+   232 ;;		 -> main@my_string(5), 
+   233 ;; Return value:  Size  Location     Type
+   234 ;;                  2    8[COMRAM] int 
+   235 ;; Registers used:
+   236 ;;		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   237 ;; Tracked objects:
+   238 ;;		On entry : 0/0
+   239 ;;		On exit  : 0/0
+   240 ;;		Unchanged: 0/0
+   241 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   242 ;;      Params:         5       0       0       0       0       0       0       0       0
+   243 ;;      Locals:        11       0       0       0       0       0       0       0       0
+   244 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   245 ;;      Totals:        16       0       0       0       0       0       0       0       0
+   246 ;;Total ram usage:       16 bytes
+   247 ;; Hardware stack levels required when called:    2
+   248 ;; This function calls:
+   249 ;;		_character_table
+   250 ;;		_display3
+   251 ;;		_send_digit
+   252 ;;		_setupPB
+   253 ;;		_strlen
+   254 ;; This function is called by:
+   255 ;;		Startup code after reset
+   256 ;; This function uses a non-reentrant model
+   257 ;;
+   258                           
+   259                           	psect	text0
+   260  0009BA                     __ptext0:
+   261                           	opt callstack 0
+   262  0009BA                     _main:
+   263                           	opt callstack 29
+   264                           
+   265                           ;main.c: 283:     setupPB();
+   266                           
+   267                           ;incstack = 0
+   268  0009BA  ECEF  F004         	call	_setupPB	;wreg free
+   269                           
+   270                           ;main.c: 288:     LATBbits.LB5=1;
+   271  0009BE  8A8A               	bsf	3978,5,c	;volatile
+   272                           
+   273                           ;main.c: 291:     char buffer[4]="127";
+   274  0009C0  C01C  F00E         	movff	main@F3319,main@buffer
+   275  0009C4  C01D  F00F         	movff	main@F3319+1,main@buffer+1
+   276  0009C8  C01E  F010         	movff	main@F3319+2,main@buffer+2
+   277  0009CC  C01F  F011         	movff	main@F3319+3,main@buffer+3
+   278  0009D0                     l1144:
+   279  0009D0  0E0E               	movlw	low main@buffer
+   280  0009D2  6E05               	movwf	display3@data3,c
+   281  0009D4  0E00               	movlw	high main@buffer
+   282  0009D6  6E06               	movwf	display3@data3+1,c
+   283  0009D8  EC92  F004         	call	_display3	;wreg free
+   284  0009DC  D7F9               	goto	l1144
+   285  0009DE                     __end_of_main:
+   286                           	opt callstack 0
+   287                           
+   288 ;; *************** function _strlen *****************
+   289 ;; Defined at:
+   290 ;;		line 12 in file "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c"
+   291 ;; Parameters:    Size  Location     Type
+   292 ;;  s               2    0[COMRAM] PTR const unsigned char 
+   293 ;;		 -> main@my_string(5), 
+   294 ;; Auto vars:     Size  Location     Type
+   295 ;;  a               2    2[COMRAM] PTR const unsigned char 
+   296 ;;		 -> main@my_string(5), 
+   297 ;; Return value:  Size  Location     Type
+   298 ;;                  2    0[COMRAM] unsigned int 
+   299 ;; Registers used:
+   300 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   301 ;; Tracked objects:
+   302 ;;		On entry : 0/0
+   303 ;;		On exit  : 0/0
+   304 ;;		Unchanged: 0/0
+   305 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   306 ;;      Params:         2       0       0       0       0       0       0       0       0
+   307 ;;      Locals:         2       0       0       0       0       0       0       0       0
+   308 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   309 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   310 ;;Total ram usage:        4 bytes
+   311 ;; Hardware stack levels used:    1
+   312 ;; This function calls:
+   313 ;;		Nothing
+   314 ;; This function is called by:
+   315 ;;		_main
+   316 ;; This function uses a non-reentrant model
+   317 ;;
+   318                           
+   319                           	psect	text1
+   320  000990                     __ptext1:
+   321                           	opt callstack 0
+   322  000990                     _strlen:
+   323                           	opt callstack 30
+   324                           
+   325                           ;incstack = 0
+   326  000990  C001  F003         	movff	strlen@s,strlen@a
+   327  000994  C002  F004         	movff	strlen@s+1,strlen@a+1
+   328  000998  D002               	goto	l1132
+   329  00099A                     l1130:
+   330  00099A  4A01               	infsnz	strlen@s,f,c
+   331  00099C  2A02               	incf	strlen@s+1,f,c
+   332  00099E                     l1132:
+   333  00099E  C001  FFD9         	movff	strlen@s,fsr2l
+   334  0009A2  C002  FFDA         	movff	strlen@s+1,fsr2h
+   335  0009A6  50DF               	movf	indf2,w,c
+   336  0009A8  A4D8               	btfss	status,2,c
+   337  0009AA  D7F7               	goto	l1130
+   338  0009AC  5003               	movf	strlen@a,w,c
+   339  0009AE  5C01               	subwf	strlen@s,w,c
+   340  0009B0  6E01               	movwf	?_strlen,c
+   341  0009B2  5004               	movf	strlen@a+1,w,c
+   342  0009B4  5802               	subwfb	strlen@s+1,w,c
+   343  0009B6  6E02               	movwf	?_strlen+1,c
+   344  0009B8  0012               	return		;funcret
+   345  0009BA                     __end_of_strlen:
+   346                           	opt callstack 0
+   347                           
+   348 ;; *************** function _setupPB *****************
+   349 ;; Defined at:
+   350 ;;		line 35 in file "main.c"
+   351 ;; Parameters:    Size  Location     Type
+   352 ;;		None
+   353 ;; Auto vars:     Size  Location     Type
+   354 ;;		None
+   355 ;; Return value:  Size  Location     Type
+   356 ;;                  1    wreg      void 
+   357 ;; Registers used:
+   358 ;;		wreg, status,2
+   359 ;; Tracked objects:
+   360 ;;		On entry : 0/0
+   361 ;;		On exit  : 0/0
+   362 ;;		Unchanged: 0/0
+   363 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   364 ;;      Params:         0       0       0       0       0       0       0       0       0
+   365 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   366 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   367 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   368 ;;Total ram usage:        0 bytes
+   369 ;; Hardware stack levels used:    1
+   370 ;; This function calls:
+   371 ;;		Nothing
+   372 ;; This function is called by:
+   373 ;;		_main
+   374 ;;		_test1
+   375 ;;		_test2
+   376 ;;		_test3
+   377 ;; This function uses a non-reentrant model
+   378 ;;
+   379                           
+   380                           	psect	text2
+   381  0009DE                     __ptext2:
+   382                           	opt callstack 0
+   383  0009DE                     _setupPB:
+   384                           	opt callstack 30
+   385                           
+   386                           ;main.c: 36:     PORTB=0x00;
+   387                           
+   388                           ;incstack = 0
+   389  0009DE  0E00               	movlw	0
+   390  0009E0  6E81               	movwf	3969,c	;volatile
+   391                           
+   392                           ;main.c: 37:     ADCON1=0x0F;
+   393  0009E2  0E0F               	movlw	15
+   394  0009E4  6EC1               	movwf	4033,c	;volatile
+   395                           
+   396                           ;main.c: 40:     TRISB=0x00;
+   397  0009E6  0E00               	movlw	0
+   398  0009E8  6E93               	movwf	3987,c	;volatile
+   399                           
+   400                           ;main.c: 41:     OSCCON=0b01000000;
+   401  0009EA  0E40               	movlw	64
+   402  0009EC  6ED3               	movwf	4051,c	;volatile
+   403  0009EE  0012               	return		;funcret
+   404  0009F0                     __end_of_setupPB:
+   405                           	opt callstack 0
+   406                           
+   407 ;; *************** function _display3 *****************
+   408 ;; Defined at:
+   409 ;;		line 263 in file "main.c"
+   410 ;; Parameters:    Size  Location     Type
+   411 ;;  data3           2    4[COMRAM] PTR unsigned char 
+   412 ;;		 -> main@buffer(4), 
+   413 ;; Auto vars:     Size  Location     Type
+   414 ;;  bit             1    7[COMRAM] unsigned char 
+   415 ;; Return value:  Size  Location     Type
+   416 ;;                  1    wreg      void 
+   417 ;; Registers used:
+   418 ;;		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+   419 ;; Tracked objects:
+   420 ;;		On entry : 0/0
+   421 ;;		On exit  : 0/0
+   422 ;;		Unchanged: 0/0
+   423 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   424 ;;      Params:         2       0       0       0       0       0       0       0       0
+   425 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   426 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   427 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   428 ;;Total ram usage:        4 bytes
+   429 ;; Hardware stack levels used:    1
+   430 ;; Hardware stack levels required when called:    1
+   431 ;; This function calls:
+   432 ;;		_character_table
+   433 ;;		_send_digit
+   434 ;; This function is called by:
+   435 ;;		_main
+   436 ;; This function uses a non-reentrant model
+   437 ;;
+   438                           
+   439                           	psect	text3
+   440  000924                     __ptext3:
+   441                           	opt callstack 0
+   442  000924                     _display3:
+   443                           	opt callstack 29
+   444                           
+   445                           ;main.c: 264:     for(unsigned char bit=0x20 ; bit!=0x01 ; ) {
+   446                           
+   447                           ;incstack = 0
+   448  000924  0E20               	movlw	32
+   449  000926  6E08               	movwf	display3@bit,c
+   450  000928                     l1114:
+   451                           
+   452                           ;main.c: 265:         send_digit(character_table(*(data3++) ) );
+   453  000928  C005  FFD9         	movff	display3@data3,fsr2l
+   454  00092C  C006  FFDA         	movff	display3@data3+1,fsr2h
+   455  000930  50DF               	movf	indf2,w,c
+   456  000932  EC06  F004         	call	_character_table
+   457  000936  EC6D  F004         	call	_send_digit
+   458  00093A  4A05               	infsnz	display3@data3,f,c
+   459  00093C  2A06               	incf	display3@data3+1,f,c
+   460                           
+   461                           ;main.c: 268:         LATB=(LATB & 0x1F)| bit;
+   462  00093E  508A               	movf	3978,w,c	;volatile
+   463  000940  0B1F               	andlw	31
+   464  000942  1008               	iorwf	display3@bit,w,c
+   465  000944  6E8A               	movwf	3978,c	;volatile
+   466                           
+   467                           ;main.c: 269:         bit = (bit<<1)|(bit>>7);
+   468  000946  90D8               	bcf	status,0,c
+   469  000948  3408               	rlcf	display3@bit,w,c
+   470  00094A  3408               	rlcf	display3@bit,w,c
+   471  00094C  6E08               	movwf	display3@bit,c
+   472                           
+   473                           ;main.c: 270:         _delay((unsigned long)((50)*(8000000/4000.0)));
+   474  00094E  0E82               	movlw	130
+   475  000950  6E07               	movwf	??_display3& (0+255),c
+   476  000952  0EDE               	movlw	222
+   477  000954                     u107:
+   478  000954  2EE8               	decfsz	wreg,f,c
+   479  000956  D7FE               	bra	u107
+   480  000958  2E07               	decfsz	??_display3& (0+255),f,c
+   481  00095A  D7FC               	bra	u107
+   482                           
+   483                           ;main.c: 271:         PORTBbits.RB4=1;;
+   484  00095C  8881               	bsf	3969,4,c	;volatile
+   485                           
+   486                           ;main.c: 273:     }
+   487  00095E  0408               	decf	display3@bit,w,c
+   488  000960  B4D8               	btfsc	status,2,c
+   489  000962  0012               	return	
+   490  000964  D7E1               	goto	l1114
+   491  000966                     __end_of_display3:
+   492                           	opt callstack 0
+   493                           
+   494 ;; *************** function _send_digit *****************
+   495 ;; Defined at:
+   496 ;;		line 232 in file "main.c"
+   497 ;; Parameters:    Size  Location     Type
+   498 ;;  data            1    wreg     unsigned char 
+   499 ;; Auto vars:     Size  Location     Type
+   500 ;;  data            1    3[COMRAM] unsigned char 
+   501 ;;  i               2    0[COMRAM] int 
+   502 ;;  a               1    2[COMRAM] unsigned char 
+   503 ;; Return value:  Size  Location     Type
+   504 ;;                  1    wreg      void 
+   505 ;; Registers used:
+   506 ;;		wreg, status,2, status,0
+   507 ;; Tracked objects:
+   508 ;;		On entry : 0/0
+   509 ;;		On exit  : 0/0
+   510 ;;		Unchanged: 0/0
+   511 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   512 ;;      Params:         0       0       0       0       0       0       0       0       0
+   513 ;;      Locals:         4       0       0       0       0       0       0       0       0
+   514 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   515 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   516 ;;Total ram usage:        4 bytes
+   517 ;; Hardware stack levels used:    1
+   518 ;; This function calls:
+   519 ;;		Nothing
+   520 ;; This function is called by:
+   521 ;;		_display3
+   522 ;;		_main
+   523 ;;		_disp_test
+   524 ;;		_enumerate_symbols
+   525 ;; This function uses a non-reentrant model
+   526 ;;
+   527                           
+   528                           	psect	text4
+   529  0008DA                     __ptext4:
+   530                           	opt callstack 0
+   531  0008DA                     _send_digit:
+   532                           	opt callstack 30
+   533                           
+   534                           ;incstack = 0
+   535                           ;send_digit@data stored from wreg
+   536  0008DA  6E04               	movwf	send_digit@data,c
+   537                           
+   538                           ;main.c: 233:     unsigned char a;;main.c: 234:     PORTB&=0xE0;
+   539  0008DC  0EE0               	movlw	224
+   540  0008DE  1681               	andwf	3969,f,c	;volatile
+   541                           
+   542                           ;main.c: 235:     PORTBbits.RB2=1;
+   543  0008E0  8481               	bsf	3969,2,c	;volatile
+   544                           
+   545                           ;main.c: 236:     for(int i=0;i<8; i++ )
+   546  0008E2  0E00               	movlw	0
+   547  0008E4  6E02               	movwf	send_digit@i+1,c
+   548  0008E6  0E00               	movlw	0
+   549  0008E8  6E01               	movwf	send_digit@i,c
+   550  0008EA                     l826:
+   551                           
+   552                           ;main.c: 237:     {;main.c: 239:         data= (data<<1) | (data>>7);
+   553  0008EA  90D8               	bcf	status,0,c
+   554  0008EC  3404               	rlcf	send_digit@data,w,c
+   555  0008EE  3404               	rlcf	send_digit@data,w,c
+   556  0008F0  6E04               	movwf	send_digit@data,c
+   557                           
+   558                           ;main.c: 240:         a=LATB & 0xFC;
+   559  0008F2  508A               	movf	3978,w,c	;volatile
+   560  0008F4  0BFC               	andlw	252
+   561  0008F6  6E03               	movwf	send_digit@a,c
+   562                           
+   563                           ;main.c: 242:         a =a| (data & 0x01);
+   564  0008F8  5004               	movf	send_digit@data,w,c
+   565  0008FA  0B01               	andlw	1
+   566  0008FC  1003               	iorwf	send_digit@a,w,c
+   567  0008FE  6E03               	movwf	send_digit@a,c
+   568                           
+   569                           ;main.c: 243:         LATB=a;
+   570  000900  C003  FF8A         	movff	send_digit@a,3978	;volatile
+   571                           
+   572                           ;main.c: 244:         PORTBbits.RB1=1;
+   573  000904  8281               	bsf	3969,1,c	;volatile
+   574                           
+   575                           ;main.c: 250:     }
+   576  000906  4A01               	infsnz	send_digit@i,f,c
+   577  000908  2A02               	incf	send_digit@i+1,f,c
+   578  00090A  BE02               	btfsc	send_digit@i+1,7,c
+   579  00090C  D7EE               	goto	l826
+   580  00090E  5002               	movf	send_digit@i+1,w,c
+   581  000910  E104               	bnz	u10
+   582  000912  0E08               	movlw	8
+   583  000914  5C01               	subwf	send_digit@i,w,c
+   584  000916  A0D8               	btfss	status,0,c
+   585  000918  D7E8               	goto	l826
+   586  00091A                     u10:
+   587                           
+   588                           ;main.c: 252:     LATB=(PORTB & 0xE0) | 0x18;;
+   589  00091A  5081               	movf	3969,w,c	;volatile
+   590  00091C  0BE0               	andlw	224
+   591  00091E  0918               	iorlw	24
+   592  000920  6E8A               	movwf	3978,c	;volatile
+   593  000922  0012               	return		;funcret
+   594  000924                     __end_of_send_digit:
+   595                           	opt callstack 0
+   596                           
+   597 ;; *************** function _character_table *****************
+   598 ;; Defined at:
+   599 ;;		line 177 in file "main.c"
+   600 ;; Parameters:    Size  Location     Type
+   601 ;;  symbol          1    wreg     unsigned char 
+   602 ;; Auto vars:     Size  Location     Type
+   603 ;;  symbol          1    2[COMRAM] unsigned char 
+   604 ;; Return value:  Size  Location     Type
+   605 ;;                  1    wreg      unsigned char 
+   606 ;; Registers used:
+   607 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru
+   608 ;; Tracked objects:
+   609 ;;		On entry : 0/0
+   610 ;;		On exit  : 0/0
+   611 ;;		Unchanged: 0/0
+   612 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   613 ;;      Params:         0       0       0       0       0       0       0       0       0
+   614 ;;      Locals:         1       0       0       0       0       0       0       0       0
+   615 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   616 ;;      Totals:         3       0       0       0       0       0       0       0       0
+   617 ;;Total ram usage:        3 bytes
+   618 ;; Hardware stack levels used:    1
+   619 ;; This function calls:
+   620 ;;		Nothing
+   621 ;; This function is called by:
+   622 ;;		_display3
+   623 ;;		_main
+   624 ;;		_enumerate_symbols
+   625 ;; This function uses a non-reentrant model
+   626 ;;
+   627                           
+   628                           	psect	text5
+   629  00080C                     __ptext5:
+   630                           	opt callstack 0
+   631  00080C                     _character_table:
+   632                           	opt callstack 29
+   633                           
+   634                           ;incstack = 0
+   635                           ;character_table@symbol stored from wreg
+   636  00080C  6E03               	movwf	character_table@symbol,c
+   637                           
+   638                           ;main.c: 180:     c_t o=0x00;;main.c: 181:     c_t a=0x01;;main.c: 182:     c_t b=0x01<<
+      +                          1;;main.c: 183:     c_t c=0x01<<2;;main.c: 184:     c_t d=0x01<<3;;main.c: 185:     c_t 
+      +                          e=0x01<<4;;main.c: 186:     c_t f=0x01<<5;;main.c: 187:     c_t g=0x01<<6;;main.c: 188: 
+      +                              c_t h=0x01<<7;;main.c: 191:     switch (symbol){
+   639  00080E  D029               	goto	l914
+   640  000810                     l840:
+   641  000810  0E77               	movlw	119
+   642  000812  0012               	return	
+   643  000814                     l844:
+   644  000814  0E7A               	movlw	122
+   645  000816  0012               	return	
+   646  000818                     l848:
+   647  000818  0E69               	movlw	105
+   648  00081A  0012               	return	
+   649  00081C                     l852:
+   650  00081C  0E3E               	movlw	62
+   651  00081E  0012               	return	
+   652  000820                     l856:
+   653  000820  0E79               	movlw	121
+   654  000822  0012               	return	
+   655  000824                     l860:
+   656  000824  0E71               	movlw	113
+   657  000826  0012               	return	
+   658  000828                     l864:
+   659  000828  0E6F               	movlw	111
+   660  00082A  0012               	return	
+   661  00082C                     l868:
+   662  00082C  0E06               	movlw	6
+   663  00082E  0012               	return	
+   664  000830                     l872:
+   665  000830  0E3D               	movlw	61
+   666  000832  0012               	return	
+   667  000834                     l876:
+   668  000834  0E1F               	movlw	31
+   669  000836  0012               	return	
+   670  000838                     l880:
+   671  000838  0E56               	movlw	86
+   672  00083A  0012               	return	
+   673  00083C                     l884:
+   674  00083C  0E5B               	movlw	91
+   675  00083E  0012               	return	
+   676  000840                     l888:
+   677  000840  0E7B               	movlw	123
+   678  000842  0012               	return	
+   679  000844                     l892:
+   680  000844  0E07               	movlw	7
+   681  000846  0012               	return	
+   682  000848                     l896:
+   683  000848  0E7F               	movlw	127
+   684  00084A  0012               	return	
+   685  00084C                     l900:
+   686  00084C  0E5F               	movlw	95
+   687  00084E  0012               	return	
+   688  000850                     l904:
+   689  000850  0E01               	movlw	low character_table@h
+   690  000852  6EF6               	movwf	tblptrl,c
+   691  000854                     	if	1	;There is more than 1 active tblptr byte
+   692  000854  0E08               	movlw	high character_table@h
+   693  000856  6EF7               	movwf	tblptrh,c
+   694  000858                     	endif
+   695  000858                     	if	0	;There are less than 3 active tblptr bytes
+   696  000858                     	endif
+   697  000858  0008               	tblrd		*
+   698  00085A  50F5               	movf	tablat,w,c
+   699  00085C  0012               	return	
+   700  00085E                     l908:
+   701  00085E  0EF5               	movlw	245
+   702  000860  0012               	return	
+   703  000862                     l914:
+   704  000862  5003               	movf	character_table@symbol,w,c
+   705  000864  6E01               	movwf	??_character_table& (0+255),c
+   706  000866  6A02               	clrf	(??_character_table+1)& (0+255),c
+   707                           
+   708                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   709                           ; Switch size 1, requested type "simple"
+   710                           ; Number of cases is 1, Range of values is 0 to 0
+   711                           ; switch strategies available:
+   712                           ; Name         Instructions Cycles
+   713                           ; simple_byte            4     3 (average)
+   714                           ;	Chosen strategy is simple_byte
+   715  000868  5002               	movf	??_character_table+1,w,c
+   716  00086A  0A00               	xorlw	0	; case 0
+   717  00086C  A4D8               	btfss	status,2,c
+   718  00086E  D7F7               	goto	l908
+   719                           
+   720                           ; Switch size 1, requested type "simple"
+   721                           ; Number of cases is 17, Range of values is 46 to 102
+   722                           ; switch strategies available:
+   723                           ; Name         Instructions Cycles
+   724                           ; simple_byte           52    27 (average)
+   725                           ;	Chosen strategy is simple_byte
+   726  000870  5001               	movf	??_character_table,w,c
+   727  000872  0A2E               	xorlw	46	; case 46
+   728  000874  B4D8               	btfsc	status,2,c
+   729  000876  D7EC               	goto	l904
+   730  000878  0A1E               	xorlw	30	; case 48
+   731  00087A  B4D8               	btfsc	status,2,c
+   732  00087C  D7D5               	goto	l864
+   733  00087E  0A01               	xorlw	1	; case 49
+   734  000880  B4D8               	btfsc	status,2,c
+   735  000882  D7D4               	goto	l868
+   736  000884  0A03               	xorlw	3	; case 50
+   737  000886  B4D8               	btfsc	status,2,c
+   738  000888  D7D3               	goto	l872
+   739  00088A  0A01               	xorlw	1	; case 51
+   740  00088C  B4D8               	btfsc	status,2,c
+   741  00088E  D7D2               	goto	l876
+   742  000890  0A07               	xorlw	7	; case 52
+   743  000892  B4D8               	btfsc	status,2,c
+   744  000894  D7D1               	goto	l880
+   745  000896  0A01               	xorlw	1	; case 53
+   746  000898  B4D8               	btfsc	status,2,c
+   747  00089A  D7D0               	goto	l884
+   748  00089C  0A03               	xorlw	3	; case 54
+   749  00089E  B4D8               	btfsc	status,2,c
+   750  0008A0  D7CF               	goto	l888
+   751  0008A2  0A01               	xorlw	1	; case 55
+   752  0008A4  B4D8               	btfsc	status,2,c
+   753  0008A6  D7CE               	goto	l892
+   754  0008A8  0A0F               	xorlw	15	; case 56
+   755  0008AA  B4D8               	btfsc	status,2,c
+   756  0008AC  D7CD               	goto	l896
+   757  0008AE  0A01               	xorlw	1	; case 57
+   758  0008B0  B4D8               	btfsc	status,2,c
+   759  0008B2  D7CC               	goto	l900
+   760  0008B4  0A58               	xorlw	88	; case 97
+   761  0008B6  B4D8               	btfsc	status,2,c
+   762  0008B8  D7AB               	goto	l840
+   763  0008BA  0A03               	xorlw	3	; case 98
+   764  0008BC  B4D8               	btfsc	status,2,c
+   765  0008BE  D7AA               	goto	l844
+   766  0008C0  0A01               	xorlw	1	; case 99
+   767  0008C2  B4D8               	btfsc	status,2,c
+   768  0008C4  D7A9               	goto	l848
+   769  0008C6  0A07               	xorlw	7	; case 100
+   770  0008C8  B4D8               	btfsc	status,2,c
+   771  0008CA  D7A8               	goto	l852
+   772  0008CC  0A01               	xorlw	1	; case 101
+   773  0008CE  B4D8               	btfsc	status,2,c
+   774  0008D0  D7A7               	goto	l856
+   775  0008D2  0A03               	xorlw	3	; case 102
+   776  0008D4  B4D8               	btfsc	status,2,c
+   777  0008D6  D7A6               	goto	l860
+   778  0008D8  D7C2               	goto	l908
+   779  0008DA                     __end_of_character_table:
+   780                           	opt callstack 0
+   781                           
+   782                           	psect	rparam
+   783  0000                     tosu	equ	0xFFF
+   784                           tosh	equ	0xFFE
+   785                           tosl	equ	0xFFD
+   786                           stkptr	equ	0xFFC
+   787                           pclatu	equ	0xFFB
+   788                           pclath	equ	0xFFA
+   789                           pcl	equ	0xFF9
+   790                           tblptru	equ	0xFF8
+   791                           tblptrh	equ	0xFF7
+   792                           tblptrl	equ	0xFF6
+   793                           tablat	equ	0xFF5
+   794                           prodh	equ	0xFF4
+   795                           prodl	equ	0xFF3
+   796                           indf0	equ	0xFEF
+   797                           postinc0	equ	0xFEE
+   798                           postdec0	equ	0xFED
+   799                           preinc0	equ	0xFEC
+   800                           plusw0	equ	0xFEB
+   801                           fsr0h	equ	0xFEA
+   802                           fsr0l	equ	0xFE9
+   803                           wreg	equ	0xFE8
+   804                           indf1	equ	0xFE7
+   805                           postinc1	equ	0xFE6
+   806                           postdec1	equ	0xFE5
+   807                           preinc1	equ	0xFE4
+   808                           plusw1	equ	0xFE3
+   809                           fsr1h	equ	0xFE2
+   810                           fsr1l	equ	0xFE1
+   811                           bsr	equ	0xFE0
+   812                           indf2	equ	0xFDF
+   813                           postinc2	equ	0xFDE
+   814                           postdec2	equ	0xFDD
+   815                           preinc2	equ	0xFDC
+   816                           plusw2	equ	0xFDB
+   817                           fsr2h	equ	0xFDA
+   818                           fsr2l	equ	0xFD9
+   819                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    9
+    Data        9
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     24      33
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           244      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    strlen@s	PTR const unsigned char  size(2) Largest target is 5
+		 -> main@my_string(COMRAM[5]), 
+
+    strlen@a	PTR const unsigned char  size(2) Largest target is 5
+		 -> main@my_string(COMRAM[5]), 
+
+    main@my_pointer	PTR unsigned char  size(2) Largest target is 5
+		 -> main@my_string(COMRAM[5]), 
+
+    display3@data3	PTR unsigned char  size(2) Largest target is 4
+		 -> main@buffer(COMRAM[4]), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_display3
+    _display3->_send_digit
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                16    11      5     760
+                                              8 COMRAM    16    11      5
+                    _character_table
+                           _display3
+                         _send_digit
+                            _setupPB
+                             _strlen
+ ---------------------------------------------------------------------------------
+ (1) _strlen                                               4     2      2     166
+                                              0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _setupPB                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _display3                                             4     2      2     331
+                                              4 COMRAM     4     2      2
+                    _character_table
+                         _send_digit
+ ---------------------------------------------------------------------------------
+ (1) _send_digit                                           4     4      0     105
+                                              0 COMRAM     4     4      0
+ ---------------------------------------------------------------------------------
+ (2) _character_table                                      3     3      0      15
+                                              0 COMRAM     3     3      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _character_table
+   _display3
+     _character_table
+     _send_digit
+   _send_digit
+   _setupPB
+   _strlen
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM_1           400      0       0      21        0.0%
+BIGRAM             3F3      0       0      22        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK7           100      0       0      19        0.0%
+BANK7              100      0       0      20        0.0%
+BITBANK6           100      0       0      17        0.0%
+BANK6              100      0       0      18        0.0%
+BITBANK5           100      0       0      15        0.0%
+BANK5              100      0       0      16        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0      14        0.0%
+BITBANK2           100      0       0       9        0.0%
+BANK2              100      0       0      10        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       8        0.0%
+BITBANK3            F4      0       0      11        0.0%
+BANK3               F4      0       0      12        0.0%
+BITBANK0            A0      0       0       5        0.0%
+BANK0               A0      0       0       6        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     18      21       1       34.7%
+BITSFR_4             0      0       0     200        0.0%
+SFR_4                0      0       0     200        0.0%
+BITSFR_3             0      0       0     200        0.0%
+SFR_3                0      0       0     200        0.0%
+BITSFR_2             0      0       0     200        0.0%
+SFR_2                0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      21       3        0.0%
+DATA                 0      0      21       4        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Thu Apr 18 16:21:52 2019
+
+                      u10 091A               __CFG_BOR$ON 000000               __CFG_BORV$3 000000  
+            __CFG_CP0$OFF 000000              __CFG_CP1$OFF 000000              __CFG_CP2$OFF 000000  
+            __CFG_CP3$OFF 000000                       l900 084C                       l904 0850  
+                     l840 0810                       l914 0862                       l826 08EA  
+                     l908 085E                       l860 0824                       l852 081C  
+                     l844 0814                       l880 0838                       l872 0830  
+                     l864 0828                       l856 0820                       l848 0818  
+                     l892 0844                       l884 083C                       l876 0834  
+                     l868 082C                       l896 0848                       l888 0840  
+            __CFG_CPB$OFF 000000                       u107 0954              __CFG_CPD$OFF 000000  
+                     wreg 000FE8              __CFG_LVP$OFF 000000               display3@bit 0008  
+            __CFG_WDT$OFF 000000                      l1114 0928                      l1130 099A  
+                    l1132 099E                      l1144 09D0                      _LATB 000F8A  
+                    _main 09BA                      fsr2h 000FDA                      indf2 000FDF  
+                    fsr1l 000FE1                      fsr2l 000FD9                      start 0000  
+           __CFG_IESO$OFF 000000              ___param_bank 000000             __CFG_PLLDIV$1 000000  
+          __CFG_CCP2MX$ON 000000                     ?_main 0009                     _CMCON 000FB4  
+                   _PORTA 000F80                     _PORTB 000F81             __CFG_USBDIV$1 000000  
+                   _TRISA 000F92                     _TRISB 000F93             __CFG_PWRT$OFF 000000  
+           __CFG_WRT0$OFF 000000             __CFG_WRT1$OFF 000000             __CFG_WRT2$OFF 000000  
+           __CFG_WRT3$OFF 000000            __CFG_EBTR0$OFF 000000            __CFG_FCMEN$OFF 000000  
+          __CFG_EBTR1$OFF 000000            __CFG_EBTR2$OFF 000000            __CFG_EBTR3$OFF 000000  
+           __CFG_WRTB$OFF 000000             __CFG_WRTC$OFF 000000             __CFG_WRTD$OFF 000000  
+          __CFG_EBTRB$OFF 000000                     tablat 000FF5           __end_of_setupPB 09F0  
+                   status 000FD8            __CFG_MCLRE$OFF 000000           __initialization 0966  
+            __end_of_main 09DE                    ??_main 000E             __activetblptr 000002  
+           display3@data3 0005                    _ADCON1 000FC1  __end_ofcharacter_table@a 0809  
+__end_ofcharacter_table@b 0808  __end_ofcharacter_table@c 0807  __end_ofcharacter_table@d 0806  
+__end_ofcharacter_table@e 0805  __end_ofcharacter_table@f 0804  __end_ofcharacter_table@g 0803  
+__end_ofcharacter_table@h 0802  __end_ofcharacter_table@o 080A                    _OSCCON 000FD3  
+         _character_table 080C            __CFG_XINST$OFF 000000          __end_of_display3 0966  
+          __CFG_STVREN$ON 000000                    _strlen 0990             main@my_string 0012  
+            __pdataCOMRAM 0017              __mediumconst 0000                    tblptrh 000FF7  
+                  tblptrl 000FF6                    tblptru 000FF8                 ??_setupPB 0001  
+              __accesstop 0060   __end_of__initialization 0986           __CFG_PBADEN$OFF 000000  
+           ___rparam_used 000001            __pcstackCOMRAM 0001     character_table@symbol 0003  
+ __end_of_character_table 08DA                   ?_strlen 0001               send_digit@a 0003  
+             send_digit@i 0001                 ?_display3 0005           __CFG_VREGEN$OFF 000000  
+                 __Hparam 0000                   __Lparam 0000              __psmallconst 0800  
+                 __pcinit 0966                   __ramtop 0800                   __ptext0 09BA  
+                 __ptext1 0990                   __ptext2 09DE                   __ptext3 0924  
+                 __ptext4 08DA                   __ptext5 080C           __size_of_strlen 002A  
+                 _setupPB 09DE                ??_display3 0007      end_of_initialization 0986  
+        ?_character_table 0001                _send_digit 08DA             __Lmediumconst 0000  
+                 postdec1 000FE5                   postinc0 000FEE                   strlen@a 0003  
+                 strlen@s 0001                 _PORTBbits 000F81                main@buffer 000E  
+           __pidataCOMRAM 09F0            __end_of_strlen 09BA       start_initialization 0966  
+             ?_send_digit 0001          __CFG_LPT1OSC$OFF 000000                  ??_strlen 0003  
+       __size_of_display3 0042       __size_of_send_digit 004A               __smallconst 0800  
+                ?_setupPB 0001                  _LATBbits 000F8A          __CFG_WDTPS$32768 000000  
+               main@F3321 0017                 main@F3319 001C                 copy_data0 097A  
+                __Hrparam 0000                  __Lrparam 0000  __size_of_character_table 00CE  
+        __size_of_setupPB 0012                  _display3 0924              ??_send_digit 0001  
+           __size_of_main 0024                  main@argc 0009                  main@argv 000B  
+   __CFG_CPUDIV$OSC1_PLL2 000000        __end_of_send_digit 0924          character_table@a 0808  
+        character_table@b 0807          character_table@c 0806          character_table@d 0805  
+        character_table@e 0804          character_table@f 0803          character_table@g 0802  
+        character_table@h 0801          character_table@o 0809         ??_character_table 0001  
+     __CFG_FOSC$INTOSC_EC 000000            send_digit@data 0004  

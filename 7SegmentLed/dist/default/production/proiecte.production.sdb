@@ -1,0 +1,162 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F2550 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"35 C:\Users\dorin\Desktop\7SegmentLed\main.c
+[v _setupPB setupPB `(v  1 e 1 0 ]
+"177
+[v _character_table character_table `(uc  1 e 1 0 ]
+"232
+[v _send_digit send_digit `(v  1 e 1 0 ]
+"263
+[v _display3 display3 `(v  1 e 1 0 ]
+"281
+[v _main main `(i  1 e 2 0 ]
+"2117 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f2550.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"2256
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S31 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"2286
+[s S40 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 PGM 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S48 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S51 . 1 `S31 1 . 1 0 `S40 1 . 1 0 `S48 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES51  1 e 1 @3969 ]
+"2647
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S93 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2674
+[s S102 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S111 . 1 `S93 1 . 1 0 `S102 1 . 1 0 ]
+[v _LATBbits LATBbits `VES111  1 e 1 @3978 ]
+"2837
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3035
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"4634
+[v _CMCON CMCON `VEuc  1 e 1 @4020 ]
+"5400
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"6805
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"281 C:\Users\dorin\Desktop\7SegmentLed\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"299
+[v main@my_string my_string `[5]uc  1 a 5 17 ]
+"291
+[v main@buffer buffer `[4]uc  1 a 4 13 ]
+"288
+[v main@F3319 F3319 `[4]uc  1 s 4 F3319 ]
+"295
+[v main@F3321 F3321 `[5]uc  1 s 5 F3321 ]
+"312
+} 0
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.39Cuc  1 a 2 2 ]
+"12
+[v strlen@s s `*.39Cuc  1 p 2 0 ]
+"26
+} 0
+"35 C:\Users\dorin\Desktop\7SegmentLed\main.c
+[v _setupPB setupPB `(v  1 e 1 0 ]
+{
+"42
+} 0
+"263
+[v _display3 display3 `(v  1 e 1 0 ]
+{
+"264
+[v display3@bit bit `uc  1 a 1 7 ]
+"263
+[v display3@data3 data3 `*.39uc  1 p 2 4 ]
+"276
+} 0
+"232
+[v _send_digit send_digit `(v  1 e 1 0 ]
+{
+[v send_digit@data data `uc  1 a 1 wreg ]
+"236
+[v send_digit@i i `i  1 a 2 0 ]
+"233
+[v send_digit@a a `uc  1 a 1 2 ]
+"232
+[v send_digit@data data `uc  1 a 1 wreg ]
+"234
+[v send_digit@data data `uc  1 a 1 3 ]
+"260
+} 0
+"177
+[v _character_table character_table `(uc  1 e 1 0 ]
+{
+[v character_table@symbol symbol `uc  1 a 1 wreg ]
+[v character_table@symbol symbol `uc  1 a 1 wreg ]
+"188
+[v character_table@h h `Cuc  1 s 1 h ]
+"177
+[v character_table@symbol symbol `uc  1 a 1 2 ]
+"215
+} 0

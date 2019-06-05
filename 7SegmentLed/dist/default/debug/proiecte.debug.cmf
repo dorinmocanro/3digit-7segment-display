@@ -1,0 +1,453 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/debug\proiecte.debug.o
+cinit CODE 0 966 966 2A 1
+text0 CODE 0 9BA 9BA 24 1
+text1 CODE 0 990 990 2A 1
+text2 CODE 0 9DE 9DE 12 1
+text3 CODE 0 924 924 42 1
+text4 CODE 0 8DA 8DA 4A 1
+text5 CODE 0 80C 80C CE 1
+idataCOMRAM CODE 0 9F0 9F0 9 1
+cstackCOMRAM COMRAM 1 1 1 16 1
+smallconst SMALLCONST 0 800 800 C 1
+dataCOMRAM COMRAM 1 17 17 9 1
+$C:\Users\dorin\AppData\Local\Temp\s4bo.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-3F3 1
+RAM 400-7FF 1
+SFR F60-FD3 1
+SFR FD5-FDA 1
+SFR FE0-FE2 1
+SFR FE8-FEA 1
+SFR FF0-FFC 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3F3 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-7FF 1
+CONST 9F9-7DBF 1
+STACK 400-7FF 1
+SMALLCONST 9F9-7DBF 1
+CODE 4-7FF 1
+CODE 9F9-7DBF 1
+BIGRAM 20-3F3 1
+BIGRAM 400-7FF 1
+COMRAM 20-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 9F9-7DBF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\proiecte.debug.o
+80C text5 CODE >177:C:\Users\dorin\Desktop\7SegmentLed\main.c
+80E text5 CODE >191:C:\Users\dorin\Desktop\7SegmentLed\main.c
+810 text5 CODE >193:C:\Users\dorin\Desktop\7SegmentLed\main.c
+814 text5 CODE >194:C:\Users\dorin\Desktop\7SegmentLed\main.c
+818 text5 CODE >196:C:\Users\dorin\Desktop\7SegmentLed\main.c
+81C text5 CODE >197:C:\Users\dorin\Desktop\7SegmentLed\main.c
+820 text5 CODE >198:C:\Users\dorin\Desktop\7SegmentLed\main.c
+824 text5 CODE >199:C:\Users\dorin\Desktop\7SegmentLed\main.c
+828 text5 CODE >200:C:\Users\dorin\Desktop\7SegmentLed\main.c
+82C text5 CODE >201:C:\Users\dorin\Desktop\7SegmentLed\main.c
+830 text5 CODE >202:C:\Users\dorin\Desktop\7SegmentLed\main.c
+834 text5 CODE >203:C:\Users\dorin\Desktop\7SegmentLed\main.c
+838 text5 CODE >204:C:\Users\dorin\Desktop\7SegmentLed\main.c
+83C text5 CODE >205:C:\Users\dorin\Desktop\7SegmentLed\main.c
+840 text5 CODE >206:C:\Users\dorin\Desktop\7SegmentLed\main.c
+844 text5 CODE >181:C:\Users\dorin\Desktop\7SegmentLed\main.c
+848 text5 CODE >208:C:\Users\dorin\Desktop\7SegmentLed\main.c
+84C text5 CODE >209:C:\Users\dorin\Desktop\7SegmentLed\main.c
+850 text5 CODE >210:C:\Users\dorin\Desktop\7SegmentLed\main.c
+85E text5 CODE >211:C:\Users\dorin\Desktop\7SegmentLed\main.c
+862 text5 CODE >212:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8DA text4 CODE >232:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8DC text4 CODE >234:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8E0 text4 CODE >235:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8E2 text4 CODE >236:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8EA text4 CODE >239:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8F2 text4 CODE >240:C:\Users\dorin\Desktop\7SegmentLed\main.c
+8F8 text4 CODE >242:C:\Users\dorin\Desktop\7SegmentLed\main.c
+900 text4 CODE >243:C:\Users\dorin\Desktop\7SegmentLed\main.c
+904 text4 CODE >244:C:\Users\dorin\Desktop\7SegmentLed\main.c
+906 text4 CODE >250:C:\Users\dorin\Desktop\7SegmentLed\main.c
+91A text4 CODE >252:C:\Users\dorin\Desktop\7SegmentLed\main.c
+922 text4 CODE >260:C:\Users\dorin\Desktop\7SegmentLed\main.c
+924 text3 CODE >263:C:\Users\dorin\Desktop\7SegmentLed\main.c
+924 text3 CODE >264:C:\Users\dorin\Desktop\7SegmentLed\main.c
+928 text3 CODE >265:C:\Users\dorin\Desktop\7SegmentLed\main.c
+93E text3 CODE >268:C:\Users\dorin\Desktop\7SegmentLed\main.c
+946 text3 CODE >269:C:\Users\dorin\Desktop\7SegmentLed\main.c
+94E text3 CODE >270:C:\Users\dorin\Desktop\7SegmentLed\main.c
+95C text3 CODE >271:C:\Users\dorin\Desktop\7SegmentLed\main.c
+95E text3 CODE >273:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9DE text2 CODE >35:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9DE text2 CODE >36:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9E2 text2 CODE >37:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9E6 text2 CODE >40:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9EA text2 CODE >41:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9EE text2 CODE >42:C:\Users\dorin\Desktop\7SegmentLed\main.c
+990 text1 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+990 text1 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+998 text1 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+99A text1 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+99E text1 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+9AC text1 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+9B8 text1 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+9BA text0 CODE >281:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9BA text0 CODE >283:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9BE text0 CODE >288:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9C0 text0 CODE >291:C:\Users\dorin\Desktop\7SegmentLed\main.c
+9D0 text0 CODE >292:C:\Users\dorin\Desktop\7SegmentLed\main.c
+966 cinit CODE >620:C:\Users\dorin\AppData\Local\Temp\s4bo.
+966 cinit CODE >622:C:\Users\dorin\AppData\Local\Temp\s4bo.
+966 cinit CODE >625:C:\Users\dorin\AppData\Local\Temp\s4bo.
+966 cinit CODE >644:C:\Users\dorin\AppData\Local\Temp\s4bo.
+968 cinit CODE >645:C:\Users\dorin\AppData\Local\Temp\s4bo.
+96A cinit CODE >646:C:\Users\dorin\AppData\Local\Temp\s4bo.
+96C cinit CODE >647:C:\Users\dorin\AppData\Local\Temp\s4bo.
+96E cinit CODE >648:C:\Users\dorin\AppData\Local\Temp\s4bo.
+970 cinit CODE >649:C:\Users\dorin\AppData\Local\Temp\s4bo.
+972 cinit CODE >650:C:\Users\dorin\AppData\Local\Temp\s4bo.
+976 cinit CODE >651:C:\Users\dorin\AppData\Local\Temp\s4bo.
+97A cinit CODE >652:C:\Users\dorin\AppData\Local\Temp\s4bo.
+97A cinit CODE >653:C:\Users\dorin\AppData\Local\Temp\s4bo.
+97C cinit CODE >654:C:\Users\dorin\AppData\Local\Temp\s4bo.
+980 cinit CODE >655:C:\Users\dorin\AppData\Local\Temp\s4bo.
+982 cinit CODE >656:C:\Users\dorin\AppData\Local\Temp\s4bo.
+984 cinit CODE >657:C:\Users\dorin\AppData\Local\Temp\s4bo.
+986 cinit CODE >663:C:\Users\dorin\AppData\Local\Temp\s4bo.
+986 cinit CODE >666:C:\Users\dorin\AppData\Local\Temp\s4bo.
+988 cinit CODE >667:C:\Users\dorin\AppData\Local\Temp\s4bo.
+98A cinit CODE >668:C:\Users\dorin\AppData\Local\Temp\s4bo.
+98C cinit CODE >669:C:\Users\dorin\AppData\Local\Temp\s4bo.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@a 809 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@b 808 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@c 807 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@d 806 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@e 805 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@f 804 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@g 803 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@h 802 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__end_ofcharacter_table@o 80A 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__Hspace_0 30000E 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hspace_1 20 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hspace_2 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\proiecte.debug.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\dorin\AppData\Local\Temp\s4bo.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\proiecte.debug.o
+__Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+_LATB F8A 0 ABS 0 - dist/default/debug\proiecte.debug.o
+___sp 0 0 STACK 2 stack C:\Users\dorin\AppData\Local\Temp\s4bo.o
+_main 9BA 0 CODE 0 text0 dist/default/debug\proiecte.debug.o
+start 0 0 CODE 0 init C:\Users\dorin\AppData\Local\Temp\s4bo.o
+__size_of_main 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+send_digit@data 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Hpowerup 0 0 CODE 0 powerup dist/default/debug\proiecte.debug.o
+__size_of_send_digit 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+_display3 924 0 CODE 0 text3 dist/default/debug\proiecte.debug.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\proiecte.debug.o
+__accesstop 60 0 ABS 0 - C:\Users\dorin\AppData\Local\Temp\s4bo.o
+intlevel0 0 0 CODE 0 text C:\Users\dorin\AppData\Local\Temp\s4bo.o
+intlevel1 0 0 CODE 0 text C:\Users\dorin\AppData\Local\Temp\s4bo.o
+intlevel2 0 0 CODE 0 text C:\Users\dorin\AppData\Local\Temp\s4bo.o
+intlevel3 0 0 CODE 0 text C:\Users\dorin\AppData\Local\Temp\s4bo.o
+__CFG_USBDIV$1 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__size_of_setupPB 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__end_of_display3 966 0 CODE 0 text3 dist/default/debug\proiecte.debug.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\proiecte.debug.o
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\proiecte.debug.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\proiecte.debug.o
+__pidataCOMRAM 9F0 0 CODE 0 idataCOMRAM dist/default/debug\proiecte.debug.o
+_ADCON1 FC1 0 ABS 0 - dist/default/debug\proiecte.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\dorin\AppData\Local\Temp\s4bo.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\dorin\AppData\Local\Temp\s4bo.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\proiecte.debug.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\proiecte.debug.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\proiecte.debug.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\proiecte.debug.o
+__Hintcodelo 0 0 CODE 0 intcodelo dist/default/debug\proiecte.debug.o
+?_strlen 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\proiecte.debug.o
+__Lintcodelo 0 0 CODE 0 intcodelo dist/default/debug\proiecte.debug.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+start_initialization 966 0 CODE 0 cinit dist/default/debug\proiecte.debug.o
+_OSCCON FD3 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\proiecte.debug.o
+__end_of_setupPB 9F0 0 CODE 0 text2 dist/default/debug\proiecte.debug.o
+___rparam_used 1 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\proiecte.debug.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/debug\proiecte.debug.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/debug\proiecte.debug.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/debug\proiecte.debug.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/debug\proiecte.debug.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\proiecte.debug.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\proiecte.debug.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\proiecte.debug.o
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\proiecte.debug.o
+__Hconst 0 0 CONST 0 const dist/default/debug\proiecte.debug.o
+__end_of_strlen 9BA 0 CODE 0 text1 dist/default/debug\proiecte.debug.o
+__Hidata 0 0 CODE 0 idata dist/default/debug\proiecte.debug.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/debug\proiecte.debug.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\proiecte.debug.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\proiecte.debug.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\proiecte.debug.o
+__Hstack 0 0 STACK 2 stack dist/default/debug\proiecte.debug.o
+__Htext0 0 0 ABS 0 text0 dist/default/debug\proiecte.debug.o
+__Htext1 0 0 ABS 0 text1 dist/default/debug\proiecte.debug.o
+__Htext2 0 0 ABS 0 text2 dist/default/debug\proiecte.debug.o
+__Htext3 0 0 ABS 0 text3 dist/default/debug\proiecte.debug.o
+__Htext4 0 0 ABS 0 text4 dist/default/debug\proiecte.debug.o
+__Htext5 0 0 ABS 0 text5 dist/default/debug\proiecte.debug.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\proiecte.debug.o
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\proiecte.debug.o
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\dorin\AppData\Local\Temp\s4bo.o
+character_table@symbol 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Hcomram 0 0 ABS 0 comram dist/default/debug\proiecte.debug.o
+__Hconfig 30000E 0 CONFIG 0 config dist/default/debug\proiecte.debug.o
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\proiecte.debug.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/debug\proiecte.debug.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/debug\proiecte.debug.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/debug\proiecte.debug.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/debug\proiecte.debug.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\proiecte.debug.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\proiecte.debug.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\proiecte.debug.o
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\proiecte.debug.o
+__Lconst 0 0 CONST 0 const dist/default/debug\proiecte.debug.o
+__Lidata 0 0 CODE 0 idata dist/default/debug\proiecte.debug.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/debug\proiecte.debug.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\proiecte.debug.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\proiecte.debug.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\proiecte.debug.o
+__Lstack 0 0 STACK 2 stack dist/default/debug\proiecte.debug.o
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\proiecte.debug.o
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\proiecte.debug.o
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\proiecte.debug.o
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\proiecte.debug.o
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\proiecte.debug.o
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\proiecte.debug.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\proiecte.debug.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\proiecte.debug.o
+_PORTBbits F81 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\proiecte.debug.o
+__Hdata 0 0 ABS 0 data dist/default/debug\proiecte.debug.o
+__Hinit 4 0 CODE 0 init dist/default/debug\proiecte.debug.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\proiecte.debug.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\proiecte.debug.o
+__Htemp 0 0 COMRAM 1 temp dist/default/debug\proiecte.debug.o
+__Htext 0 0 ABS 0 text dist/default/debug\proiecte.debug.o
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\proiecte.debug.o
+__Ldata 0 0 ABS 0 data dist/default/debug\proiecte.debug.o
+__Linit 0 0 CODE 0 init dist/default/debug\proiecte.debug.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\proiecte.debug.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\proiecte.debug.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/debug\proiecte.debug.o
+__Ltext 0 0 ABS 0 text dist/default/debug\proiecte.debug.o
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Hintret 0 0 ABS 0 intret dist/default/debug\proiecte.debug.o
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\proiecte.debug.o
+__S0 30000E 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__S1 20 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__S2 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_VREGEN$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__end_of_character_table 8DA 0 CODE 0 text5 dist/default/debug\proiecte.debug.o
+__CFG_PLLDIV$1 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\proiecte.debug.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\proiecte.debug.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\proiecte.debug.o
+display3@data3 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\proiecte.debug.o
+__Hramtop 800 0 RAM 0 ramtop dist/default/debug\proiecte.debug.o
+strlen@a 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+strlen@s 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\proiecte.debug.o
+__activetblptr 2 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\proiecte.debug.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\proiecte.debug.o
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\proiecte.debug.o
+_character_table 80C 0 CODE 0 text5 dist/default/debug\proiecte.debug.o
+__CFG_BOR$ON 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_BORV$3 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lcomram 0 0 ABS 0 comram dist/default/debug\proiecte.debug.o
+__Lconfig 300000 0 CONFIG 0 config dist/default/debug\proiecte.debug.o
+_LATBbits F8A 0 ABS 0 - dist/default/debug\proiecte.debug.o
+main@F3319 1C 0 COMRAM 1 dataCOMRAM dist/default/debug\proiecte.debug.o
+main@F3321 17 0 COMRAM 1 dataCOMRAM dist/default/debug\proiecte.debug.o
+main@my_string 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\proiecte.debug.o
+_strlen 990 0 CODE 0 text1 dist/default/debug\proiecte.debug.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\proiecte.debug.o
+_send_digit 8DA 0 CODE 0 text4 dist/default/debug\proiecte.debug.o
+__CFG_CCP2MX$ON 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+stackhi 7FF 0 ABS 0 - C:\Users\dorin\AppData\Local\Temp\s4bo.o
+stacklo 400 0 ABS 0 - C:\Users\dorin\AppData\Local\Temp\s4bo.o
+__Lintcode 0 0 CODE 0 intcode dist/default/debug\proiecte.debug.o
+__Lintret 0 0 ABS 0 intret dist/default/debug\proiecte.debug.o
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\proiecte.debug.o
+_setupPB 9DE 0 CODE 0 text2 dist/default/debug\proiecte.debug.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+main@buffer E 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__Lspace_0 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lspace_1 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lspace_2 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__CFG_FOSC$INTOSC_EC 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_CPUDIV$OSC1_PLL2 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+end_of_initialization 986 0 CODE 0 cinit dist/default/debug\proiecte.debug.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\proiecte.debug.o
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\proiecte.debug.o
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hreset_vec 0 0 CODE 0 reset_vec dist/default/debug\proiecte.debug.o
+__Lramtop 800 0 RAM 0 ramtop dist/default/debug\proiecte.debug.o
+__size_of_strlen 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\proiecte.debug.o
+__pcinit 966 0 CODE 0 cinit dist/default/debug\proiecte.debug.o
+__ptext0 9BA 0 CODE 0 text0 dist/default/debug\proiecte.debug.o
+__ptext1 990 0 CODE 0 text1 dist/default/debug\proiecte.debug.o
+__ptext2 9DE 0 CODE 0 text2 dist/default/debug\proiecte.debug.o
+__ptext3 924 0 CODE 0 text3 dist/default/debug\proiecte.debug.o
+__ptext4 8DA 0 CODE 0 text4 dist/default/debug\proiecte.debug.o
+__ptext5 80C 0 CODE 0 text5 dist/default/debug\proiecte.debug.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\proiecte.debug.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\dorin\AppData\Local\Temp\s4bo.o
+__end_of_send_digit 924 0 CODE 0 text4 dist/default/debug\proiecte.debug.o
+__Lpowerup 0 0 CODE 0 powerup dist/default/debug\proiecte.debug.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\proiecte.debug.o
+__psmallconst 800 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__size_of_character_table 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\proiecte.debug.o
+character_table@h 801 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+___param_bank 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\proiecte.debug.o
+__end_of__initialization 986 0 CODE 0 cinit dist/default/debug\proiecte.debug.o
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\proiecte.debug.o
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\proiecte.debug.o
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+display3@bit 8 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+__end_of_main 9DE 0 CODE 0 text0 dist/default/debug\proiecte.debug.o
+_CMCON FB4 0 ABS 0 - dist/default/debug\proiecte.debug.o
+_PORTA F80 0 ABS 0 - dist/default/debug\proiecte.debug.o
+_PORTB F81 0 ABS 0 - dist/default/debug\proiecte.debug.o
+send_digit@a 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+send_digit@i 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\proiecte.debug.o
+_TRISA F92 0 ABS 0 - dist/default/debug\proiecte.debug.o
+_TRISB F93 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__HRAM 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hbss 0 0 RAM 1 bss dist/default/debug\proiecte.debug.o
+__Hram 0 0 ABS 0 ram dist/default/debug\proiecte.debug.o
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\proiecte.debug.o
+__LRAM 1 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Lbss 0 0 RAM 1 bss dist/default/debug\proiecte.debug.o
+__Lram 0 0 ABS 0 ram dist/default/debug\proiecte.debug.o
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\proiecte.debug.o
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__initialization 966 0 CODE 0 cinit dist/default/debug\proiecte.debug.o
+__pdataCOMRAM 17 0 COMRAM 1 dataCOMRAM dist/default/debug\proiecte.debug.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\proiecte.debug.o
+__Hsmallconst 80C 0 SMALLCONST 0 smallconst dist/default/debug\proiecte.debug.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\proiecte.debug.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\proiecte.debug.o
+__size_of_display3 0 0 ABS 0 - dist/default/debug\proiecte.debug.o
+__Hintcode 0 0 CODE 0 intcode dist/default/debug\proiecte.debug.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+text5 0 80C 80C 1ED 1
+cstackCOMRAM 1 1 1 1F 1
+reset_vec 0 0 0 4 1
+smallconst 0 800 800 C 1
+config 0 300000 300000 E 1
